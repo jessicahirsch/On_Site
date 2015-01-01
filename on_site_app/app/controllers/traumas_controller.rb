@@ -1,4 +1,5 @@
 class TraumasController < ApplicationController
+
   def index
     @traumas = Trauma.all
   end
@@ -6,4 +7,5 @@ class TraumasController < ApplicationController
   def show
     @trauma = Trauma.find(params[:id])
   end
+
 end

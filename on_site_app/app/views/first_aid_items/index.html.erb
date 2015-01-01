@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <img src=<%=image_path("first-aid-kit-for-your-home-resized.jpg")%> alt="" width="1024" height="576" usemap="#Map"/>
+
+<% @first_aid_items.each do |x| %>
+
+  <div>
+    <a href="/first_aid/<%= x.id %>"><%= x.name %></a>
+    <a href="/first_aid/<%= x.id %>"><%= x.instructions %></a>
+     <map name="Map">
+    <area shape="poly" onClick=<%= alert('x.name') %> coords="112,298,185,296,205,296,211,303,211,331,219,337,217,355,211,355,211,364,208,367,189,365,189,374,114,372" href="#" alt="adhesive">
+      </map>
+
+  </div>
+
+<% end %>
+
+</body>
+</html>

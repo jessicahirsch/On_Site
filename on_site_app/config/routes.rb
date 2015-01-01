@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "/traumas/:id", to: "traumas#show"
 
   get "/first_aid", to: "first_aid_items#index"
+  get "/first_aid/:id", to: "first_aid_items#show"
+
 end
