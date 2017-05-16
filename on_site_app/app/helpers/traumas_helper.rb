@@ -1,0 +1,2 @@
+module TraumasHelper
+end

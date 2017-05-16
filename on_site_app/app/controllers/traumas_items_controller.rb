@@ -1,0 +1,2 @@
+class TraumasItemsController < ApplicationController
+end

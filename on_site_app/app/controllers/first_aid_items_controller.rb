@@ -1,0 +1,2 @@
+class FirstAidItemsController < ApplicationController
+end
