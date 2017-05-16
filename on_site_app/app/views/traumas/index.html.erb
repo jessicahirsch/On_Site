@@ -1,0 +1,7 @@
+<h1>Trauma List</h1>
+
+<% @traumas.each do |trauma| %>
+  <div>
+    <a href="/traumas/<%= trauma.id %>"><%= trauma.name %></a>
+  </div>
+<% end %>
