@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('/first_aid').observe('click', function (event) {
+  alert('Hooray!');
+  event.stop(); // Prevent link from following through to its given href
+});

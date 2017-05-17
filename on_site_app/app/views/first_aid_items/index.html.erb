@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/assets/stylesheets/application.css">
 </head>
 <body>
-  <img src=<%=image_path("first-aid-kit-for-your-home-resized.jpg")%> alt="" width="1024" height="576" usemap="#Map"/>
+
+<h1>First Aid Items</h1>
+
+<div class="container"></div>
+
+  <img src=<%=image_path("first-aid-kit-for-your-home-resized.jpg")%>  height="576" usemap="#Map"/>
+
+  <map name="Map" >
 
 <% @first_aid_items.each do |x| %>
-
-  <div>
-    <a href="/first_aid/<%= x.id %>"><%= x.name %></a>
-    <a href="/first_aid/<%= x.id %>"><%= x.instructions %></a>
-     <map name="Map">
-    <area shape="poly" href="/" coords="112,298,185,296,205,296,211,303,211,331,219,337,217,355,211,355,211,364,208,367,189,365,189,374,114,372" href="#" alt="adhesive">
-      </map>
-
-  </div>
-
+  <area id="<%=x[:name]%>" shape="poly" coords="<%= x[:coords] %>" href="" alt="adhesive">
 <% end %>
+
+  </map>
 
 </body>
 </html>
