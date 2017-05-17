@@ -5,7 +5,7 @@ class FirstAidItemsController < ApplicationController
   end
 
   def show
-    @first_aid_item = params[:id]
+    @first_aid_item = FirstAidItem.find(params[:id])
   end
 
   def first_aid_items_param
