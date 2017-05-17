@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  /*max-width: 100%;*/
+  width: 10px;
+  height: 10px;
+  margin-left: 400px;
+  position: absolute;
+  z-index: 0;
+  display: block;
+  margin-top: 400px;
+}
+
+h1 {
+  /*font-family: sans-serif;*/
+}
