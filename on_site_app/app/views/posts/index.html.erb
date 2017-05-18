@@ -12,19 +12,21 @@
   <li><a href="/traumas">Traumas List</a></li>
 
 <h1>On Site</h1>
-
+<div class="post_form">
 <form action="/posts" method='POST'>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <b>Title</b>  <input type="text" name="title">
+  <b>Title</b>  <input type="text" name="title" wrap="hard" rows="2" cols="20">
   <b>Content</b> <input type="text" name="content">
   <input type="submit">
-</form>
+</form></div>
+<br>
 
+<div class="post_container">
 <% @posts.each do |post| %>
     <h3><%= post.title %></h3>
     <p><%= post.content %><br>
-      Submitted <%= time_ago_in_words(post.created_at) %>
-    </p><br>
+      <br>Submitted <%= time_ago_in_words(post.created_at) %>
+    </p>
 
   <%= link_to like_path(post), method: :put do %>
     Upvote
@@ -34,10 +36,10 @@
   <%= link_to dislike_path(post), method: :put do %>
     Downvote
     <%= post.get_downvotes.size %>
-  <% end %>
+  <% end %><br>
 
-<% end %>
-
+<% end %><br>
+</div>
 
 </body>
 </html>
