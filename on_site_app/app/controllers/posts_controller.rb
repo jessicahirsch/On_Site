@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("cached_votes_up DESC")
   end
 
   def new
@@ -20,8 +20,8 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @session = Session.find_by(:id => 1)
-    @session = Session.find_by(id: @session)
+    # @session = Session.find_by(:id => $1)
+    @session = Session.last
     # @post.upvote
     # @post.upvote_from current_user
     # @session[:voting_id].to_i ||= create_unique_voting_id
@@ -32,8 +32,8 @@ class PostsController < ApplicationController
 
   def downvote
     @post = Post.find(params[:id])
-    @session = Session.find_by(:id => 1)
-    @session = Session.find_by(id: @session)
+    # @session = Session.find_by(:id => $1)
+    @session = Session.last
     @post.downvote_by @session
     # @post.downvote
     # @post.downvote_from current_user

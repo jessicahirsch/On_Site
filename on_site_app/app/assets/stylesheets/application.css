@@ -32,3 +32,21 @@ h1 {
 li {
   list-style-type: none;
 }
+
+.post_container {
+  border: 3px dashed navy;
+  background: rgba(255, 255, 255, .5);
+  /*background: rgba(54, 25, 25, .5);*/
+  color: black;
+  text-align: center;
+}
+
+.post_form {
+  border: 3px dashed navy;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 100px;
+    word-wrap:break-word;
+}
