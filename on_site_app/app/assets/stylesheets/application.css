@@ -50,3 +50,20 @@ input[type="text"] {
     height: 100px;
     word-wrap:break-word;
 }
+
+.home_logo {
+  font-size: 50px;
+}
+
+#material-icons-up {
+  color: green;
+}
+
+#material-icons-down {
+  color: red;
+}
+
+.siren {
+  margin-bottom: 500px;
+  z-index: 0;
+}

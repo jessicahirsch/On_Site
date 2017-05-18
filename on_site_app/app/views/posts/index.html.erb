@@ -3,19 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title></title>
   <link rel="stylesheet" href="/assets/stylesheets/application.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 </head>
-<body>
 
-  <li><a href="/first_aid">First Aid Kit</a></li>
-  <li><a href="/traumas">Traumas List</a></li>
+  <nav class="red darken-3" role="navigation">
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/first_aid">First Aid Kit</a></li>
+      <li><a href="/traumas">Trauma List</a></li>
+    </ul>
 
-<h1>On Site</h1>
+      <ul id="nav-mobile" class="brand-logo center">
+        <li><a href="/" class="home_logo">On Site</a></li>
+      </ul>
+      <a href="/signup" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
 <div class="post_form">
 <form action="/posts" method='POST'>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <b>Title</b>  <input type="text" name="title" wrap="hard" rows="2" cols="20">
+  <b>Post Title</b>  <input type="text" name="title" wrap="hard" rows="2" cols="20">
   <b>Content</b> <input type="text" name="content">
   <input type="submit">
 </form></div>
@@ -29,12 +44,12 @@
     </p>
 
   <%= link_to like_path(post), method: :put do %>
-    Upvote
+    <i class="material-icons" id="material-icons-up">thumb_up</i>
     <%= post.get_upvotes.size %>
   <% end %><br>
 
   <%= link_to dislike_path(post), method: :put do %>
-    Downvote
+    <i class="material-icons" id="material-icons-down">thumb_down</i>
     <%= post.get_downvotes.size %>
   <% end %><br>
 
