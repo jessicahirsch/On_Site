@@ -3,19 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title></title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/app/assets/images">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
 
-  <li><a href="/first_aid">First Aid Kit</a></li>
-  <li><a href="/traumas">Traumas List</a></li>
-  <li><a href="/posts">Channel</a></li>
+  <nav class="red darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Home</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/first_aid">First Aid Kit</a></li>
+        <li><a href="/traumas">Trauma List</a></li>
+        <li><a href="/posts">Channel</a></li>
+      </ul>
 
-  <h1> First Aid Item: <%= @first_aid_item.name %> </h1>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h1><%= @first_aid_item.name %> </h1>
 
-  <p> Instructions for Use: <%= @first_aid_item.instructions %></p>
-  <p> Use Cases: <%= @first_aid_item.uses %></p>
+  <div class="first_aid_show">
+    <p> <b>Instructions for Use:</b> <%= @first_aid_item.instructions %></p>
+    <p> <b>Use Cases:</b> <%= @first_aid_item.uses %></p>
+  </div>
+
+  <div class="item_image">
+    <img src=<%= "/assets/#{@first_aid_item.image}" %> />
+  </div>
 
 </body>
 </html>

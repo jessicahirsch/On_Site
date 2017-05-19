@@ -5,6 +5,7 @@ class FirstAidItemsController < ApplicationController
   end
 
   def show
+    @first_aid_items = FirstAidItem.all
     @first_aid_item = FirstAidItem.find(params[:id])
   end
 
