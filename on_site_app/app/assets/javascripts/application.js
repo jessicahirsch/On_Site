@@ -15,7 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(console.log("hi"))
+
 $('/first_aid').observe('click', function (event) {
   alert('Hooray!');
   event.stop(); // Prevent link from following through to its given href
 });
+
+<% if @post.valid? %>
+  $(".post_form").prepend('<%= j(render(@post)) %>'); // make sure you have _track.html.erb
+  $(".post_form")[0].reset(); // this will clear your form inputs
+<% else %>
+  alert('Something Went Wrong');
+<% end %>

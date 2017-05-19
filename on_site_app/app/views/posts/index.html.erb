@@ -23,7 +23,6 @@
       <ul id="nav-mobile" class="brand-logo center">
         <li><a href="/" class="home_logo">On Site</a></li>
       </ul>
-      <a href="/signup" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
@@ -31,10 +30,16 @@
 <form action="/posts" method='POST'>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <b>Post Title</b>  <input type="text" name="title" wrap="hard" rows="2" cols="20">
-  <b>Content</b> <input type="text" name="content">
+  <b>Your Story</b> <input type="text" name="content">
   <input type="submit">
 </form></div>
 <br>
+
+  <div class="siren">
+  <span><iframe src="https://giphy.com/embed/9c9Qa5kocGqru" width="80" height="80" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sirens-9c9Qa5kocGqru"></a></p>
+  NIST Telephone Time-of-Day Service<br>
+  <a href="tel:+911">Call</a> 911 Emergency Services Now</span>
+  </div>
 
 <div class="post_container">
 <% @posts.each do |post| %>
@@ -52,6 +57,7 @@
     <i class="material-icons" id="material-icons-down">thumb_down</i>
     <%= post.get_downvotes.size %>
   <% end %><br>
+
 
 <% end %><br>
 </div>

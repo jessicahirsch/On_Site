@@ -18,19 +18,26 @@
   <nav class="red darken-3" role="navigation">
     <ul class="right hide-on-med-and-down">
       <li><a href="/first_aid">First Aid Kit</a></li>
-      <li><a href="/traumas">Traumas</a></li>
+      <li><a href="/traumas">Trauma List</a></li>
       <li><a href="/posts">Channel</a></li>
     </ul>
 
       <ul id="nav-mobile" class="brand-logo center">
         <li><a href="/" class="home_logo">On Site</a></li>
       </ul>
-      <a href="/signup" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
+<div class="trauma_show">
 </html><h1> <%= @trauma.name %> </h1>
 
-<p> <%= @trauma.instructions %></p>
+<p> <b>Instructions:</b> <%= @trauma.instructions %></p>
+
+
+   <% @first_aid_items.each do |x| %>
+      <area id="<%=x[:name]%>" href="/first_aid/<%= x[:id] %>">
+    <% end %>
+    </div>
+
 
 </body>
